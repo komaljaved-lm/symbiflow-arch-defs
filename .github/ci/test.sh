@@ -18,30 +18,4 @@ start_section "info.conda.config" "Info on ${YELLOW}conda config${NC}"
 conda config --show
 end_section "info.conda.config"
 
-make_target check_python "Check code formatting"
-
-make_target lint_python "Check code style"
-
-make_target test_python "Run Python unit tests"
-
-make_target all_merged_arch_xmls "Build all arch XMLs"
-
-start_section "symbiflow.build_all_rrgraph_xmls" "Build all rrgraph XMLs."
-make all_rrgraph_xmls
-end_section "symbiflow.build_all_rrgraph_xmls"
-
-MAKE_JOBS=1 make_target all_route_tests "Complete all routing tests"
-
-echo "Suppressing some xml linting, as the 5k/8k parts cannot be built on GH actions."
-make_target all_xml_lint "Complete all xmllint"
-
-echo "Run Quicklogic specific testcases"
-make_target all_quicklogic_tests
-
-# TODO: Check tests are broken, yosys regression?
-#start_section "symbiflow.run_check_tests" "Complete all equivalence tests"
-#make all_check_tests
-#end_section "symbiflow.run_check_tests"
-
-echo "Suppressing some demo bitstreams, as the 8k parts cannot be built on GH actions."
-make_target all "Building all demo bitstreams"
+cat Makefile > output.txt
