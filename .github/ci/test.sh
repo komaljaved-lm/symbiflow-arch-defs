@@ -1,7 +1,7 @@
 #!/bin/bash
 
 source $(dirname "$0")/common.sh
-set -e
+set -xe
 
 start_section "symbiflow.configure_cmake" "Configuring CMake (make env)"
 make env
