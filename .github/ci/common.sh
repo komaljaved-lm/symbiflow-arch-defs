@@ -63,6 +63,7 @@ function make_target() {
   start_section "symbiflow.$target" "$2"
   make_status=0
   make -k -j${JOBS} $target || make_status=$?
+  cat Makefile
   end_section "symbiflow.$target"
 
   # When the build fails, produce the failure output in a clear way
