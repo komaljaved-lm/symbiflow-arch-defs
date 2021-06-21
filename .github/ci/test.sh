@@ -18,4 +18,4 @@ start_section "info.conda.config" "Info on ${YELLOW}conda config${NC}"
 conda config --show
 end_section "info.conda.config"
 
-cat Makefile > output.txt
+cat Makefile
